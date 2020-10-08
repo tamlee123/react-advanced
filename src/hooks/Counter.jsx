@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
 function Counter(props) {
-  const array = useState(0);
-  const count = array[0]; // this.state.count
-  const setState = array[1]; //this.setState()
+  const [count, setState] = useState(0);
+
   return <div>counter: {}</div>;
 }
 
