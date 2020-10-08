@@ -8,7 +8,9 @@ function Counter(props) {
     <Fragment>
       //add input state variable, .target.value is for updating state variable
       <input type="text" onChange={(e) => setName(e.target.value)}></input>
-      <div>counter: {count}</div>
+      <div>
+        {name} has clicked {count} times!
+      </div>
       <button onClick={() => setState(count + 1)}>Increase</button>
     </Fragment>
   );
