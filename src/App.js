@@ -1,10 +1,12 @@
 import React from "react";
-import logo from "./logo.svg";
+
 import Movie from "./hoc/Movie";
+import Counter from "./hooks/Counter";
+
 import "./App.css";
 
 function App() {
-  return <Movie id={1} />;
+  return <Counter />;
 }
 
 export default App;
