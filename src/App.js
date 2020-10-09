@@ -1,12 +1,12 @@
 import React from "react";
 
-import Movie from "./hoc/Movie";
+import Users from "./hooks/Users";
 import Counter from "./hooks/Counter";
 
 import "./App.css";
 
 function App() {
-  return <Counter />;
+  return <Users />;
 }
 
 export default App;
