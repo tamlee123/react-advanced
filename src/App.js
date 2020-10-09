@@ -1,12 +1,18 @@
-import React from "react";
+import React, { Component } from "react";
+import MoviePage from "./context/MoviePage";
 
-import Users from "./hooks/Users";
-import Counter from "./hooks/Counter";
-
-import "./App.css";
-
-function App() {
-  return <Users />;
+import UserContext from "./context/userContext";
+class App extends Component {
+  state = { currentUser: { name: "Mosh" } };
+  render() {
+    return (
+      <UserContext.Provider value={this.state.currentUser}>
+        <div>
+          <MoviePage />
+        </div>
+      </UserContext.Provider>
+    );
+  }
 }
 
 export default App;
