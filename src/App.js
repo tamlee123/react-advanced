@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import MoviePage from "./context/MoviePage";
-import Login from "./context/Login";
 import UserContext from "./context/userContext";
+import CartContext from "./context/cartContext";
+import Login from "./context/Login";
 
 class App extends Component {
   handleLoggedIn = (usrename) => {
@@ -12,17 +13,19 @@ class App extends Component {
   state = { currentUser: null };
   render() {
     return (
-      <UserContext.Provider
-        value={{
-          currentUser: this.state.currentUser,
-          onLoggedIn: this.handleLoggedIn,
-        }}
-      >
-        <div>
-          <MoviePage />
-          <Login />
-        </div>
-      </UserContext.Provider>
+      <CartContext.Provider value={{ cart: [] }}>
+        <UserContext.Provider
+          value={{
+            currentUser: this.state.currentUser,
+            onLoggedIn: this.handleLoggedIn,
+          }}
+        >
+          <div>
+            <MoviePage />
+            <Login />
+          </div>
+        </UserContext.Provider>
+      </CartContext.Provider>
     );
   }
 }
